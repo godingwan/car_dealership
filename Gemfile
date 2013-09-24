@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,6 +18,11 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'pry-rails'
 end
 
 gem 'jquery-rails'
