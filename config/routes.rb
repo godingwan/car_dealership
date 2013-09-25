@@ -1,7 +1,7 @@
 CarDealer::Application.routes.draw do
   devise_for :users
 
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :edit, :update] do
     resources :cars, only: [:index]
   end
 

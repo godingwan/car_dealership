@@ -1,0 +1,4 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.input :role, collection: ["admin", "employee", "customer"], :include_blank => false %>
+  <%= f.submit "Change role" %>
+<%- end %>
