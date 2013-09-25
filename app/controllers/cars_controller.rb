@@ -4,12 +4,15 @@ class CarsController < ApplicationController
   end
 
   def new
-    @user = current_user
     @car = current_user.cars.new
   end
 
   def create
-    @car = current_user.cars.new(params[:car])
+    if current_user.role == "admin"
+      @car = Car.new(params[:car])
+    else
+      @car = current_user.cars.new(params[:car])
+    end
 
     if @car.save
       flash[:notice] = "Car added successfully."
