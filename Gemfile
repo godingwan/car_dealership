@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'devise'
 gem 'cancan'
+gem 'simple_form'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,6 +25,12 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
 end
 
 gem 'jquery-rails'

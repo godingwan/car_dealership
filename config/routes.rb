@@ -1,6 +1,11 @@
 CarDealer::Application.routes.draw do
   devise_for :users
 
+  resources :users, only: [:show] do
+    resources :cars, only: [:index]
+  end
+
+  resources :cars, only: [:new, :create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
