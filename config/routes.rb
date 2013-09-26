@@ -5,7 +5,7 @@ CarDealer::Application.routes.draw do
     resources :cars, only: [:index]
   end
 
-  resources :cars, only: [:new, :create]
+  resources :cars, only: [:index, :new, :create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

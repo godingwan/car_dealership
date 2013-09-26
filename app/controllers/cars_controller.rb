@@ -1,6 +1,10 @@
 class CarsController < ApplicationController
   def index
-    @cars = current_user.cars
+    if params[:user_id]
+      @cars = current_user.cars
+    else
+      @cars = Car.all
+    end
   end
 
   def new
