@@ -1,6 +1,8 @@
 <%- @cars.each do |car| %>
-  <%= car.make %>
-  <%= car.model %>
+  <%- if car.sellable == true %>
+    <%= car.make %>
+    <%= car.model %>
+  <%- end %>
 <%- end %>
 
 <%= link_to "Add Car", new_car_path %>
