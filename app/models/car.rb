@@ -4,4 +4,5 @@ class Car < ActiveRecord::Base
   # TODO: find a more secure way to change ownership of a car
 
   validates_presence_of :year, :make, :model, :user_id, :list_price
+  has_one :offer
 end

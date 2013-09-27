@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :role
 
   has_many :cars, :inverse_of => :user, dependent: :destroy
+  has_many :offers
 end
