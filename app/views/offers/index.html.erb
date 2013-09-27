@@ -1,0 +1,5 @@
+<h1>Car ID of offers</h1>
+<%= @offers.each do |offer| %>
+  <%= link_to offer.car_id, edit_offer_path(offer) %>
+  <!-- Figure out why the offers are getting displayed -->
+<%- end %>
