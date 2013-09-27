@@ -1,1 +1,5 @@
 <h1>Welcome to car dealership.</h1>
+<%- if user_signed_in? %>
+  <%= "You're user id is #{current_user.id}. Give this to people so
+    that they can make offers to you." %>
+<%- end %>

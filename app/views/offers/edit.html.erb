@@ -1,4 +1,7 @@
+<%= "Do you want to buy #{@car.make + " " + @car.model + " " + @car.year.to_s } for $#{@car.list_price}?" %>
+
 <%= simple_form_for @offer do |f| %>
-  <%= f.input :result %>
+  <%= f.input :result, label: "Click checkbox to accept" %>
   <%= f.submit "Update offer" %>
 <%- end %>
+<%= link_to "Cancel", offers_path %>

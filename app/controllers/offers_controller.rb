@@ -21,6 +21,7 @@ class OffersController < ApplicationController
 
   def edit
     @offer = Offer.find(params[:id])
+    @car = @offer.car
   end
 
   def update
