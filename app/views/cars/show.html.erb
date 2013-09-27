@@ -3,7 +3,9 @@
 <%= "Make: " + @car.make %>
 <%= "List Price: " + @car.list_price.to_s %>
 
-<%- if current_user.cars.include?(@car) %>
-  <%= link_to "Change car status", edit_car_path(@car) %>
+<%- if user_signed_in? %>
+  <%- if current_user.cars.include?(@car) %>
+    <%= link_to "Change car status", edit_car_path(@car) %>
+  <%- end %>
 <%- end %>
 <%# TODO: Write authorization check with cancan to not allow users to access through URL %>

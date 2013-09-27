@@ -2,4 +2,7 @@
 <%- if user_signed_in? %>
   <%= "You're user id is #{current_user.id}. Give this to people so
     that they can make offers to you." %>
+<%- else %>
+  <p>Please sign in or register to fully utilize this website.</p>
+  <p>You can still view sellable cars.</p>
 <%- end %>

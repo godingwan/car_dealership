@@ -1,8 +1,15 @@
 <%- @cars.each do |car| %>
-  <%- if car.sellable == true %>
+  <%- if not user_signed_in? or current_user != car.user %>
+    <%- if car.sellable == true %>
+      <%= link_to car.make, car_path(car) %>
+      <%= link_to car.model, car_path(car) %>
+    <%- end %>
+  <%- else %>
     <%= link_to car.make, car_path(car) %>
     <%= link_to car.model, car_path(car) %>
   <%- end %>
 <%- end %>
 
-<%= link_to "Add Car", new_car_path %>
+<%- if user_signed_in? %>
+  <%= link_to "Add Car", new_car_path %>
+<%- end %>
