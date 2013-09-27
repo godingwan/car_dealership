@@ -1,7 +1,7 @@
 <%- @cars.each do |car| %>
   <%- if car.sellable == true %>
-    <%= car.make %>
-    <%= car.model %>
+    <%= link_to car.make, car_path(car) %>
+    <%= link_to car.model, car_path(car) %>
   <%- end %>
 <%- end %>
 

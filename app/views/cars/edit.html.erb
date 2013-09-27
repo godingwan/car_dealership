@@ -1,0 +1,8 @@
+<%= simple_form_for @car do |f| %>
+  <%= f.input :year, collection: 1950..2014 %>
+  <%= f.input :make %>
+  <%= f.input :model %>
+  <%= f.input :list_price %>
+  <%= f.input :sellable %>
+  <%= f.submit "Save" %>
+<%- end %>
