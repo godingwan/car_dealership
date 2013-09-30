@@ -1,8 +1,9 @@
-<%= simple_form_for @car do |f| %>
+<%= simple_form_for @car, html: {multipart: true} do |f| %>
   <%= f.input :year, collection: 1950..2014 %>
   <%= f.input :make %>
   <%= f.input :model %>
   <%= f.input :list_price %>
+  <%= f.input :image %>
   <%- if current_user.role == "admin" %>
     <%= f.input :user_id %>
   <%- end %>
