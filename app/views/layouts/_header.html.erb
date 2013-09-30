@@ -1,13 +1,31 @@
-<%= link_to "Home", root_path %>
-<%- if not user_signed_in? %>
-  <%= link_to "Cars", cars_path %>
-<%- end %>
-<%- if user_signed_in? %>
-  <%= link_to "Offers", offers_path %>
-  <%= link_to "Cars", user_cars_path(current_user) %>
-  <%= link_to "User list", users_path %>
-  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-<%- else %>
-  <%= link_to "Register", new_user_registration_path %>
-  <%= link_to "Login", user_session_path %>
-<%- end %>
+<div class="header_container">
+  <div class="header_wrapper">
+    <div class="button">
+      <%= link_to "Home", root_path %>
+    </div>
+    <%- if not user_signed_in? %>
+      <div class="button">
+        <%= link_to "Cars", cars_path %>
+      </div>
+    <%- end %>
+    <%- if user_signed_in? %>
+      <div class="button">
+        <%= link_to "Offers", offers_path %>
+      </div>
+      <div class="button">
+        <%= link_to "Cars", user_cars_path(current_user) %>
+      </div>
+      <div class="button">
+        <%= link_to "User list", users_path %>
+      </div>
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <%- else %>
+      <div class="login_link">
+        <%= link_to "Register", new_user_registration_path %>
+      </div>
+      <div class="login_link">
+        <%= link_to "Login", user_session_path %>
+      </div>
+    <%- end %>
+  </div>
+</div>
