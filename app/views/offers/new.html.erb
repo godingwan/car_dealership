@@ -1,8 +1,8 @@
-<p>Input the buyer's user ID into the buyer field.</p>
+<p>Select the user's email of who you would like to make an offer with.</p>
 <p>Then the ID of the car you would like to offer into the car field.</p>
 
 <%= simple_form_for @offer do |f| %>
-  <%= f.input :buyer_id %>
+  <%= f.input :buyer_id, collection: @buyer_collection %>
   <%= f.input :car_id %>
   <%= f.submit "Send offer" %>
 <%- end %>

@@ -8,4 +8,12 @@ class User < ActiveRecord::Base
 
   has_many :cars, :inverse_of => :user, dependent: :destroy
   has_many :offers
+
+  def self.arrayify
+    user_array = []
+    User.order('created_at ASC').all.each do |user|
+      user_array << user.email
+    end
+    return user_array
+  end
 end

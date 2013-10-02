@@ -8,7 +8,7 @@ feature "selling a car" do
     sign_in_as(employee)
     visit user_path(customer)
     click_link "Create offer"
-    fill_in "Buyer", :with => 1
+    select(customer.email, :from => "offer_buyer_id")
     fill_in "Car", :with => 1
     click_button "Send offer"
 

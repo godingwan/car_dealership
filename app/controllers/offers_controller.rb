@@ -5,6 +5,7 @@ class OffersController < ApplicationController
 
   def new
     @offer = current_user.offers.new
+    @buyer_collection = User.arrayify
   end
 
   def create
