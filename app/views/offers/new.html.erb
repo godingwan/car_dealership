@@ -3,6 +3,6 @@
 
 <%= simple_form_for @offer do |f| %>
   <%= f.input :buyer_id, collection: @buyer_collection %>
-  <%= f.input :car_id %>
+  <%= f.input :car_id, collection: @cars_owned_collection %>
   <%= f.submit "Send offer" %>
 <%- end %>

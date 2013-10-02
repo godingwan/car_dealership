@@ -6,6 +6,11 @@ class OffersController < ApplicationController
   def new
     @offer = current_user.offers.new
     @buyer_collection = User.arrayify
+    # TODO: Skinny controller, fat model
+    @cars_owned_collection = []
+    current_user.cars.each do |car|
+      @cars_owned_collection << car.id
+    end
   end
 
   def create

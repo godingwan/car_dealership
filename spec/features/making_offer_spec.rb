@@ -9,7 +9,7 @@ feature "selling a car" do
     visit user_path(customer)
     click_link "Create offer"
     select(customer.email, :from => "offer_buyer_id")
-    fill_in "Car", :with => 1
+    select(sellable_car.id, :from => "offer_car_id")
     click_button "Send offer"
 
     expect(page).to have_content("Offer sent successfully")
